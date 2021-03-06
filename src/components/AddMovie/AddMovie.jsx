@@ -1,4 +1,4 @@
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 
 
 function AddMovie() {
@@ -23,6 +23,7 @@ function AddMovie() {
   return(
     <>
     <h2>Add Movie</h2>
+    <Link to="/">Movie List</Link>
     <input
     type="text"
     placeholder="Title"

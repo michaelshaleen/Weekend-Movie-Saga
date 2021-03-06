@@ -9,7 +9,7 @@ function App() {
       <h1>The Movies Saga!</h1>
       
       <Router>        
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link> */}
         <br></br>
         <Link to="/add_Movie">Add Movie</Link>
 
