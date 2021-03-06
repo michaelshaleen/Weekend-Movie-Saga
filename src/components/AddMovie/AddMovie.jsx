@@ -1,9 +1,17 @@
 import {useHistory, Link} from 'react-router-dom';
 import { takeEvery, put } from 'redux-saga/effects';
+import { useDispatch } from 'react-redux';
+import {useState} from 'react';
 
 
 function AddMovie() {
   const history = useHistory();
+  const dispatch = useDispatch();
+  const [newMovieTitle, setMovieTitle] = useState('');
+  const [newMovieDescription, setMovieDescription] = useState('');
+  const [newMovieUrl, setMovieUrl] = useState('');
+  const [newMovieGenre, setMovieGenre] = useState('');
+
 
 
   const cancelBtn = () => {
@@ -11,11 +19,20 @@ function AddMovie() {
     history.push("/");
   }
 
-  const saveBtn = (action) => {
-    console.log("save button")
-    const newMovie = action.payload;
+  const saveBtn = () => {
+    console.log("clicked")
+    dispatch({
+      type: 'SAVE_MOVIE',
+      payload:{
+        newMovieDescription,
+        newMovieTitle,
+        newMovieUrl
+      }
+    })
+    // const newMovie = action.payload;
+    // console.log("new movie", newMovie);
 
-     yield axios.post('/api/movie',{newMovie: newMovie} )
+    //  yield axios.post('/api/movie',{newMovie: newMovie} )
 
     // which should update the title and 
     // description in the database and bring 
@@ -31,16 +48,24 @@ function AddMovie() {
     <input
     type="text"
     placeholder="Title"
+    onChange={(event) => setMovieTitle(event.target.value)}
     />
+
     <input
     type="text"
     placeholder="Image URL"
+    onChange={(event) => setMovieUrl(event.target.value)}
     />
+
     <input
     type="text"
     placeholder="description"
+    onChange={(event) => setMovieDescription(event.target.value)}
     />
-    <select name="Genres" id="genres">
+
+    <select name="Genres" id="genres"
+        onChange={(event) => setMovieGenre(event.target.value)}
+        >
       <option value="Adventure">Adventure</option>
       <option value="Animated">Animated</option>
       <option value="Biographical">Biographical</option>

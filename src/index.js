@@ -15,19 +15,30 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('SET_MOVIES', setMovies);
+    yield takeEvery('SAVE_MOVIE', saveMovie);
 
 }
 
-
-function* setMovies() {
-  // get all movies from the DB
+function* saveMovie() {
   try {
-      const thisMovie = yield axios.get('/api/movie/id');
-      console.log('LOOKING FOR THIS ???', thisMovie.data);
+      const newMovie = yield axios.post('/api/movie/id');
+      console.log('LOOKING FOR THIS ???', newMovie.data);
 
   } catch {
       console.log('ERROR SINGLE MOVIE');
   }
+      
+}
+function* setMovies() {
+  console.log("in set Movies")
+  // get all movies from the DB
+  // try {
+  //     const thisMovie = yield axios.post('/api/movie/id');
+  //     console.log('LOOKING FOR THIS ???', thisMovie.data);
+
+  // } catch {
+  //     console.log('ERROR SINGLE MOVIE');
+  // }
       
 }
 
