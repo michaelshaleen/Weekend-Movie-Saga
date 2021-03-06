@@ -11,7 +11,7 @@ function App() {
       <Router>        
         <Link to="/">Home</Link>
         <br></br>
-        <Link to="/">Add Movie</Link>
+        <Link to="/add_Movie">Add Movie</Link>
 
 
 

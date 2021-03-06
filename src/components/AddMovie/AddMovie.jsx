@@ -22,6 +22,7 @@ function AddMovie() {
 
   return(
     <>
+    <h2>Add Movie</h2>
     <input
     type="text"
     placeholder="Title"
