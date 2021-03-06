@@ -20,25 +20,26 @@ function* rootSaga() {
 }
 
 function* saveMovie() {
-  try {
-      const newMovie = yield axios.post('/api/movie/id');
-      console.log('LOOKING FOR THIS ???', newMovie.data);
-
-  } catch {
-      console.log('ERROR SINGLE MOVIE');
-  }
-      
-}
-function* setMovies() {
-  console.log("in set Movies")
-  // get all movies from the DB
+  console.log("save movie")
+  console.log(action.payload, "PAYLOAD")
   // try {
-  //     const thisMovie = yield axios.post('/api/movie/id');
-  //     console.log('LOOKING FOR THIS ???', thisMovie.data);
+  //     const newMovie = yield axios.post('/api/movie/id');
+  //     console.log('LOOKING FOR THIS ???', newMovie.data);
 
   // } catch {
   //     console.log('ERROR SINGLE MOVIE');
   // }
+      
+}
+function* setMovies() {
+  // get all movies from the DB
+  try {
+      const thisMovie = yield axios.post('/api/movie/id');
+      console.log('LOOKING FOR THIS ???', thisMovie.data);
+
+  } catch {
+      console.log('ERROR SINGLE MOVIE');
+  }
       
 }
 

@@ -22,7 +22,7 @@ function AddMovie() {
   const saveBtn = () => {
     console.log("clicked")
     dispatch({
-      type: 'SAVE_MOVIE',
+      type: 'SET_MOVIES',
       payload:{
         newMovieDescription,
         newMovieTitle,
