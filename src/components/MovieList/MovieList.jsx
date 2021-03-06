@@ -16,24 +16,42 @@ function MovieList() {
     }, []);
 
 
-    const imageClick = () => {
+    const imageClick = (event) => {
       console.log("image click")
       history.push("/details");
+      dispatch({
+        type: 'FETCH_MOVIES',
+        payload:{
+         // id: movie.id???
+          value: event.target.value
+        } 
+      })
     }
 
+
+  //   <form onSubmit={handleSubmit}>
+  //   <input
+  //     onChange={(event) => handleChange(event)}
+  //     placeholder='GitHub username'
+  //     value={editStudent.github_name}
+  //   />
+  //   <input type='submit' value='Update Student' />
+  // </form>
     return (
         <main>
             <h1>MovieList</h1>
-            <section onClick={imageClick} className="movies">
+            <form onClick={imageClick}>
+            <section className="movies">
                 {movies.map(movie => {
-                    return (
-                        <div key={movie.id} >
+                  return (
+                    <div key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
                         </div>
                     );
-                })}
+                  })}
             </section>
+            </form>
         </main>
 
     );
