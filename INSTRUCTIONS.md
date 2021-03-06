@@ -45,9 +45,10 @@ We've added some movie posters in the `public/images` folder, and the database i
 This view is completed already! It displays all of the movies in the movie database. 
 
 - TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
-[]
+[x]
+[x] component for details 
 - TODO: Have a way to get to the Add Movie Page
-[]
+[x]
 ### Details Page
 
 This should show all details **including ALL genres** for the selected movie. You will need to store this data in redux!
@@ -55,6 +56,7 @@ This should show all details **including ALL genres** for the selected movie. Yo
  > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
 
 - TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+[x]
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
