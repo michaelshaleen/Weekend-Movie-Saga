@@ -11,7 +11,7 @@ app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
 app.use('/api/movie', movieRouter);
-// app.use('/api/movie/:id', movieRouter);
+app.use('/api/movie/:id', movieRouter);
 
 app.use('/api/genre', genreRouter)
 

@@ -22,21 +22,11 @@ function MovieList() {
       dispatch({
         type: 'FETCH_MOVIES',
         payload:{
-         // id: movie.id???
+          //id: id,
           value: event.target.value
         } 
       })
     }
-
-
-  //   <form onSubmit={handleSubmit}>
-  //   <input
-  //     onChange={(event) => handleChange(event)}
-  //     placeholder='GitHub username'
-  //     value={editStudent.github_name}
-  //   />
-  //   <input type='submit' value='Update Student' />
-  // </form>
     return (
         <main>
             <h1>MovieList</h1>

@@ -14,12 +14,29 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('SET_MOVIES', setMovies);
+
 }
+
+
+function* setMovies() {
+  // get all movies from the DB
+  try {
+      const thisMovie = yield axios.get('/api/movie/id');
+      console.log('LOOKING FOR THIS ???', thisMovie.data);
+
+  } catch {
+      console.log('ERROR SINGLE MOVIE');
+  }
+      
+}
+
+
 
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
-        const movies = yield axios.get('/api/movie');
+        const movies = yield axios.get('/api/movie/');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 

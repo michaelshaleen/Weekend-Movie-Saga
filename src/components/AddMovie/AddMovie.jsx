@@ -1,4 +1,5 @@
 import {useHistory, Link} from 'react-router-dom';
+import { takeEvery, put } from 'redux-saga/effects';
 
 
 function AddMovie() {
@@ -10,9 +11,12 @@ function AddMovie() {
     history.push("/");
   }
 
-  const saveBtn = () => {
+  const saveBtn = (action) => {
     console.log("save button")
-    history.push("/");
+    const newMovie = action.payload;
+
+     yield axios.post('/api/movie',{newMovie: newMovie} )
+
     // which should update the title and 
     // description in the database and bring 
     // the user to the Home/List Page (which now 
