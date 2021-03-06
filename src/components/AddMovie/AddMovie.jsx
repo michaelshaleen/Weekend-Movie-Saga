@@ -1,4 +1,24 @@
+import {useHistory} from 'react-router-dom';
+
+
 function AddMovie() {
+  const history = useHistory();
+
+
+  const cancelBtn = () => {
+    console.log("cancel button")
+    history.push("/");
+  }
+
+  const saveBtn = () => {
+    console.log("save button")
+    history.push("/");
+    // which should update the title and 
+    // description in the database and bring 
+    // the user to the Home/List Page (which now 
+    //   has the new movie)
+
+  }
 
   return(
     <>
@@ -29,15 +49,11 @@ function AddMovie() {
       <option value="Space-Opera Fiction">Space-Opera</option>
       <option value="Superhero">Superhero</option>
     </select>
-    </>
+    <button onClick={cancelBtn}>Cancel</button>
+    <button onClick={saveBtn}>Save</button>
 
+    </>
   )
 }
 
-
-<select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+export default AddMovie;
