@@ -89,7 +89,7 @@ function AddMovie() {
 
     <div>
       <p>Here we are able to add any movie of your choosing!</p>
-      <p>Both the Cancel and Save buttons will bring you to our landing page</p>
+      <p>Both the Cancel and Save buttons will bring you to</p>
     </div>
     </>
   )
