@@ -37,9 +37,8 @@ function AddMovie() {
   return(
     <>
     <h2>Add Movie</h2>
-    {/* <Link to="/">Movie List</Link> */}
-    <div className="div">
-    <input
+    <main>
+          <input
     type="text"
     placeholder="Title"
     onChange={(event) => setMovieTitle(event.target.value)}
@@ -85,8 +84,13 @@ function AddMovie() {
     <button onClick={cancelBtn}>Cancel</button>
     <button onClick={saveBtn}>Save</button>
 
-    </div>
+    </main>
 
+
+    <div>
+      <p>Here we are able to add any movie of your choosing!</p>
+      <p>Both the Cancel and Save buttons will bring you to our landing page</p>
+    </div>
     </>
   )
 }
