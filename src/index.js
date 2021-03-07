@@ -34,7 +34,7 @@ function* setMovies(action) {
 //reducer called when 'THIS_MOVIE' is dispatched
 //returns a state, can be accessed with .newMovie
 const newMovie = (state = {}, action) => {
-  console.log("MOVIES REDUCER", action.payload)
+  //console.log("MOVIES REDUCER", action.payload)
     switch (action.type) {
         case 'THIS_MOVIE':
             return action.payload;
@@ -46,7 +46,7 @@ const newMovie = (state = {}, action) => {
 function* fetchAllMovies() {
     try {
         const movies = yield axios.get('/api/movie/');
-        console.log('get all:', movies.data);
+        //console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
     } catch {
         console.log('get all error');
@@ -58,7 +58,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
-  console.log("MOVIES REDUCER", action.payload)
+  //console.log("MOVIES REDUCER", action.payload)
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
