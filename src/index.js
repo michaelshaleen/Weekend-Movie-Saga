@@ -15,27 +15,14 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('SET_MOVIES', setMovies);
-    yield takeEvery('SAVE_MOVIE', saveMovie);
+    //yield takeEvery('SAVE_MOVIE', saveMovie);
 
 }
 
-function* saveMovie() {
-  console.log("save movie")
-  console.log(action.payload, "PAYLOAD")
-  // try {
-  //     const newMovie = yield axios.post('/api/movie/id');
-  //     console.log('LOOKING FOR THIS ???', newMovie.data);
-
-  // } catch {
-  //     console.log('ERROR SINGLE MOVIE');
-  // }
-      
-}
 function* setMovies() {
-  // get all movies from the DB
   try {
-      const thisMovie = yield axios.post('/api/movie/id');
-      console.log('LOOKING FOR THIS ???', thisMovie.data);
+      yield axios.post('/api/movie/:id', {title, poster, description});
+      console.log('LOOKING FOR THIS ???', res.data);
 
   } catch {
       console.log('ERROR SINGLE MOVIE');
@@ -63,6 +50,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
+  console.log("MOVIES REDUCER", action.payload)
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;

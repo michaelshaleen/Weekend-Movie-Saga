@@ -24,21 +24,11 @@ function AddMovie() {
     dispatch({
       type: 'SET_MOVIES',
       payload:{
-        newMovieDescription,
-        newMovieTitle,
-        newMovieUrl
+        title: newMovieTitle,
+        poster: newMovieUrl,
+       description: newMovieDescription,
       }
     })
-    // const newMovie = action.payload;
-    // console.log("new movie", newMovie);
-
-    //  yield axios.post('/api/movie',{newMovie: newMovie} )
-
-    // which should update the title and 
-    // description in the database and bring 
-    // the user to the Home/List Page (which now 
-    //   has the new movie)
-
   }
 
   return(

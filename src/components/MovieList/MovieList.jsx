@@ -10,7 +10,7 @@ function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-
+    console.log(movies, )
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
