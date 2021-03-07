@@ -33,14 +33,12 @@ function ThisMovie({movie}) {
 
   return(
     // show these values of the object movie
-    <div className="OneCard">
       <div key={movie.id} >
        <u><h3>{movie.title}</h3></u>
           <img src={movie.poster}
               alt={movie.title}
               onClick={imageClicked}
               />
-       </div>
      </div>
   )
 }

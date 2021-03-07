@@ -23,6 +23,7 @@ function Details() {
 
         <p>{movieDetails.title}</p>
         <p>{movieDetails.description}</p>
+        <h4>Genres:</h4>
            {movieGenreDetails.map(genre => {
              return (
                <p>{genre.name}</p>

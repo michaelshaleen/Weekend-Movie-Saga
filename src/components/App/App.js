@@ -8,7 +8,6 @@ import Details from '../Details/Details'
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
       {/* ROUTEar Declares the what path
       will match with what Component */}
       

@@ -17,7 +17,7 @@ function MovieList() {
 
     return (
         <main className="main">
-            {/* <h1>MovieList</h1> */}
+            <h1>MovieList</h1>
 
             {/* map out list of all movies in DB */}
               <section className="card">

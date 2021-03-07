@@ -37,28 +37,35 @@ function AddMovie() {
   return(
     <>
     <h2>Add Movie</h2>
-    <Link to="/">Movie List</Link>
+    {/* <Link to="/">Movie List</Link> */}
+    <div className="div">
     <input
     type="text"
     placeholder="Title"
     onChange={(event) => setMovieTitle(event.target.value)}
     />
+    <br></br>
 
     <input
     type="text"
     placeholder="Image URL"
     onChange={(event) => setMovieUrl(event.target.value)}
     />
+        <br></br>
+
 
     <input
     type="text"
     placeholder="description"
     onChange={(event) => setMovieDescription(event.target.value)}
     />
+        <br></br>
+
 
     <select name="Genres" id="genres"
         onChange={(event) => setMovieGenre(event.target.value)}
         >
+
       <option value="Adventure">Adventure</option>
       <option value="Animated">Animated</option>
       <option value="Biographical">Biographical</option>
@@ -73,8 +80,12 @@ function AddMovie() {
       <option value="Space-Opera Fiction">Space-Opera</option>
       <option value="Superhero">Superhero</option>
     </select>
+    <br></br>
+
     <button onClick={cancelBtn}>Cancel</button>
     <button onClick={saveBtn}>Save</button>
+
+    </div>
 
     </>
   )
