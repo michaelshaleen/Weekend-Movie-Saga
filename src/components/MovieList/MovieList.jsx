@@ -21,8 +21,6 @@ function MovieList() {
 
             {/* map out list of all movies in DB */}
               <section className="card">
-                <div className="profile-sidebar"></div>
-                  <div className="profile-main"></div>  
                 {movies.map(movie => {
                   return (
                     <ThisMovie
