@@ -11,13 +11,10 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-
-// Create the rootSaga generator function
+//Generator funtion that listens for dispatch type
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('SET_MOVIES', setMovies);
-   // yield takeEvery('THIS_MOVIE', thisMovie);
-
 }
 
 
@@ -35,7 +32,8 @@ function* setMovies(action) {
 
 
 
-
+//reducer called when 'THIS_MOVIE' is dispatched
+//returns a state, can be accessed with .newMovie
 const newMovie = (state = {}, action) => {
   console.log("MOVIES REDUCER", action.payload)
     switch (action.type) {
@@ -45,18 +43,15 @@ const newMovie = (state = {}, action) => {
             return state;
     }
 }
-
+//generator function that grabs all movies from DB
 function* fetchAllMovies() {
-    // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie/');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-
     } catch {
         console.log('get all error');
-    }
-        
+    }      
 }
 
 // Create sagaMiddleware

@@ -5,6 +5,7 @@ import {useHistory, Link} from 'react-router-dom';
 function Details() {
 
   const history = useHistory();
+  //newMovie comes from state in newMovie reducer
   const movieDetails = useSelector(store => store.newMovie);
   console.log(movieDetails, "LOOK HERE HOE");
   
@@ -15,47 +16,12 @@ function Details() {
         <button onClick={() => history.push('/')}>Back to List</button>
       </nav>
       <h2>Details Page</h2>
-
-      <p>{movieDetails.title}</p>
-      <p>{movieDetails.description}</p>
-      <p>{movieDetails.poster}</p>
-
-      
-      {/* {movieDetails.map((movies, id) => {
-        return(
-          <div key={movies.id}>
-          <h3>{movies.title}</h3>
-          by {movies.description}
-        </div>  
-        )
-        })} */}
-       </>
-
+      {/* grabs values from object of movieDetails */}
+        <p>{movieDetails.title}</p>
+        <p>{movieDetails.description}</p>
+        <p>{movieDetails.poster}</p>
+   </>
   )
-    
 };
 
 export default Details;
-{/* <>
-//<Link to="/">Movie List</Link>
-
-// <ul>
-//    {movieDetails.map((movies, id) => 
-//       <li key={id}>{movies.title} by {movies.description}</li>  
-//     )}
-// </ul>
-//<img src={movieDetails.poster}/>
-) */}
-
-// <form onClick={imageClick}>
-// <section className="movies">
-//     {movies.map(movie => {
-//       return (
-//         <div key={movie.id} >
-//                 <h3>{movie.title}</h3>
-//                 <img src={movie.poster} alt={movie.title}/>
-//             </div>
-//         );
-//       })}
-// </section>
-// </form>

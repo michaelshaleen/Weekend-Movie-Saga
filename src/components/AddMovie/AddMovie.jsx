@@ -13,12 +13,13 @@ function AddMovie() {
   const [newMovieGenre, setMovieGenre] = useState('');
 
 
-
+  //brings user back to home page
   const cancelBtn = () => {
     console.log("cancel button")
     history.push("/");
   }
-
+  //sends data to redux state
+  //caught by rootSaga in index
   const saveBtn = () => {
     console.log("clicked")
     dispatch({
@@ -32,6 +33,7 @@ function AddMovie() {
     cancelBtn();
   }
 
+  //what user will see on DOM
   return(
     <>
     <h2>Add Movie</h2>

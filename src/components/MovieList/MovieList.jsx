@@ -5,11 +5,11 @@ import ThisMovie from '../ThisMovie/ThisMovie';
 import './MovieList.css'
 
 function MovieList() {
-  const history = useHistory();
-
-
+    const history = useHistory();
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
+
+    //on page load, run this
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
@@ -18,20 +18,17 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-          
-            <section className="movies">
+            {/* map out list of all movies in DB */}
+              <section className="movies">
                 {movies.map(movie => {
                   return (
                     <ThisMovie
                     movie = {movie} />
-                    
                     );
                   })}
-            </section>
-            
+              </section>
         </main>
-
-    );
+    )
 }
 
 export default MovieList;

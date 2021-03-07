@@ -6,13 +6,11 @@ import {useHistory, Link} from 'react-router-dom';
 
 
 function ThisMovie({movie}) {
- // const[thisMovie, setThisMovie] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
-
-  
-  
+  //dispatch when img is clicked
+  // and bring user to details page
   const imageClicked = () => {
     console.log(movie,"MOVIE")
     dispatch({
@@ -20,19 +18,18 @@ function ThisMovie({movie}) {
       payload:  movie
     })
     history.push('/details')
-    
   }
   
  
 
   return(
+    // show these values of the object movie
      <div key={movie.id} >
         <h3>{movie.title}</h3>
           <img src={movie.poster}
               alt={movie.title}
               onClick={imageClicked}
               />
-
      </div>
   )
 }

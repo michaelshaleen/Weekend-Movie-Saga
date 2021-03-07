@@ -3,18 +3,17 @@ import './App.css';
 import MovieList from '../MovieList/MovieList'
 import AddMovie from '../AddMovie/AddMovie'
 import Details from '../Details/Details'
+
+
 function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
+      {/* ROUTEar Declares the what path
+      will match with what Component */}
       
       <Router>        
-        {/* <Link to="/">Home</Link> */}
-        <br></br>
         <Link to="/add_Movie">Add Movie</Link>
-
-
-
 
         <Route path="/" exact>
           <MovieList />
