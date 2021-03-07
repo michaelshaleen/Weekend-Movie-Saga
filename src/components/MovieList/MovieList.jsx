@@ -8,7 +8,7 @@ function MovieList() {
     const history = useHistory();
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-
+    const newMovie = useSelector(store => store.newMovie)
     //on page load, run this
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });

@@ -18,7 +18,7 @@ function* rootSaga() {
     yield takeEvery('FETCH_GENRES', fetchGenres);
 }
 
-//maybe use only reducers instead of axios.post
+
 function* setMovies(action) {
   try {
       yield axios.post('/api/movie/:id', action.payload);
