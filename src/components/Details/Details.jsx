@@ -5,12 +5,9 @@ import {useHistory, Link} from 'react-router-dom';
 function Details() {
 
   const history = useHistory();
-  const movieDetails = useSelector(store => store.movies);
+  const movieDetails = useSelector(store => store.newMovie);
   console.log(movieDetails, "LOOK HERE HOE");
   
-  //a get request to DB
-  // store data in Redux
-  //do we add Dispatch?
   
   return(
     <>
@@ -18,15 +15,20 @@ function Details() {
         <button onClick={() => history.push('/')}>Back to List</button>
       </nav>
       <h2>Details Page</h2>
+
+      <p>{movieDetails.title}</p>
+      <p>{movieDetails.description}</p>
+      <p>{movieDetails.poster}</p>
+
       
-      {movieDetails.map((movies, id) => {
+      {/* {movieDetails.map((movies, id) => {
         return(
           <div key={movies.id}>
           <h3>{movies.title}</h3>
           by {movies.description}
         </div>  
         )
-        })}
+        })} */}
        </>
 
   )
