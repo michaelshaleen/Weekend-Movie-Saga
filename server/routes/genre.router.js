@@ -4,8 +4,10 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
   const genreQuery = `
-  SELECT 
-  `;
+  SELECT "genres".name FROM "genres"
+  JOIN "movies_genres" ON "genres".id = "movies_genres".genre_id
+  JOIN "movies" ON "movies_genres".movie_id = "movies".id
+  WHERE "movies".id =1; `;
 
   pool.query(genreQuery)
     .then( result => {

@@ -7,10 +7,10 @@ function Details() {
   const history = useHistory();
   //newMovie comes from state in newMovie reducer
   const movieDetails = useSelector(store => store.newMovie);
-  const movieGenreDetails = useSelector(store => store.genres[0]);
+  const movieGenreDetails = useSelector(store => store.genres);
 
   console.log(movieDetails, "MOVIE DETAILS");
-  console.log(movieGenreDetails, 'GENRES')
+  console.log(movieGenreDetails, ' IN DETAILS GENRES')
   
   
   return(
@@ -20,12 +20,10 @@ function Details() {
       </nav>
       <h2>Details Page</h2>
       {/* grabs values from object of movieDetails */}
-      <div className="Onecard">
 
         <p>{movieDetails.title}</p>
         <p>{movieDetails.description}</p>
-      </div>
-        {/* <p>{movieGenreDetails.name}</p> */}
+        <p>{movieGenreDetails}</p>
 
         {/* <p>{movieGenreDetails.map((genre, index) => 
         <p key={index}>{genre}</p> */}
