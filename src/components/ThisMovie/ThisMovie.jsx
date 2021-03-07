@@ -11,6 +11,7 @@ function ThisMovie({movie}) {
   const history = useHistory();
 
   //dispatch when img is clicked
+  //connects with newMovie reducer
   // and bring user to details page
   const imageClicked = () => {
     console.log(movie,"MOVIE")
@@ -26,7 +27,7 @@ function ThisMovie({movie}) {
   const grabGenre = () => {
     dispatch({
       type: 'FETCH_GENRES',
-      payload: movie
+      payload: movie.id
     })
   }
  

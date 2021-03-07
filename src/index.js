@@ -71,7 +71,7 @@ const movies = (state = [], action) => {
 
 function* fetchGenres() {
   try {
-      const genres = yield axios.get('/api/genre/');
+      const genres = yield axios.get('/api/genre/:id');
       console.log('get all GENRES:', genres.data);
       yield put({ type: 'SET_GENRES', payload: genres.data });
   } catch {
