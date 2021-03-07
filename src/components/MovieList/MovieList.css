@@ -1,4 +1,8 @@
-.movies {
-    display : flex;
-    flex-wrap: wrap;
+.card {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-spacing: 20px;
 }
+
+

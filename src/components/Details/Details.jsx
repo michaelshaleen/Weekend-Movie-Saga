@@ -10,7 +10,7 @@ function Details() {
   const movieGenreDetails = useSelector(store => store.genres[0]);
 
   console.log(movieDetails, "MOVIE DETAILS");
-  console.log(movieGenreDetails.name, 'GENRES')
+  console.log(movieGenreDetails, 'GENRES')
   
   
   return(
@@ -20,9 +20,12 @@ function Details() {
       </nav>
       <h2>Details Page</h2>
       {/* grabs values from object of movieDetails */}
+      <div className="Onecard">
+
         <p>{movieDetails.title}</p>
         <p>{movieDetails.description}</p>
-        <p>{movieGenreDetails.name}</p>
+      </div>
+        {/* <p>{movieGenreDetails.name}</p> */}
 
         {/* <p>{movieGenreDetails.map((genre, index) => 
         <p key={index}>{genre}</p> */}

@@ -44,3 +44,9 @@ function ThisMovie({movie}) {
 }
 
 export default ThisMovie;
+{/* <div class="w3-card-4">
+  <img src="img_snowtops.jpg" alt="Alps">
+  <div class="w3-container w3-center">
+    <p>The Italian / Austrian Alps</p>
+  </div>
+</div> */}
