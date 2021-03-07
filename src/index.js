@@ -19,9 +19,9 @@ function* rootSaga() {
 
 }
 
-function* setMovies() {
+function* setMovies(action) {
   try {
-      yield axios.post('/api/movie/:id', {title, poster, description});
+      yield axios.post('/api/movie/:id', action.payload);
       console.log('LOOKING FOR THIS ???', res.data);
 
   } catch {
