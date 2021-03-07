@@ -5,10 +5,6 @@ import {useHistory, Link} from 'react-router-dom';
 function Details() {
 
   const history = useHistory();
-  
-  
-  
-  
   const movieDetails = useSelector(store => store.movies);
   console.log(movieDetails, "LOOK HERE HOE");
   

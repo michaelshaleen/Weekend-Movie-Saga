@@ -18,7 +18,7 @@ function MovieList() {
 
     const imageClick = (event) => {
       console.log("image click")
-      history.push("/details");
+      console.log(event.target.value, 'EVENT TARGET')
       dispatch({
         type: 'FETCH_MOVIES',
         payload:{
@@ -26,6 +26,7 @@ function MovieList() {
           value: event.target.value
         } 
       })
+      history.push("/details");
     }
     return (
         <main>

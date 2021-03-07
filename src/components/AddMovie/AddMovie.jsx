@@ -29,6 +29,7 @@ function AddMovie() {
        description: newMovieDescription,
       }
     })
+    cancelBtn();
   }
 
   return(

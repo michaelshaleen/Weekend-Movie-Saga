@@ -11,13 +11,15 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('SET_MOVIES', setMovies);
-    //yield takeEvery('SAVE_MOVIE', saveMovie);
+    yield takeEvery('THIS_MOVIE', thisMovie);
 
 }
+
 
 function* setMovies(action) {
   try {
@@ -28,11 +30,25 @@ function* setMovies(action) {
   } 
   catch {
       console.log('ERROR SINGLE MOVIE');
-  }
-      
+  }    
 }
 
 
+
+
+function* thisMovie(action) {
+  console.log("this MOvie")
+  console.log(action, "action")
+  //   try {
+  //     const movies = yield axios.get('/api/movie/');
+  //     console.log('get all:', movies.data);
+  //     yield put({ type: 'SET_MOVIES', payload: movies.data });
+
+  // } catch {
+  //     console.log('get all error');
+  // }
+      
+}
 
 function* fetchAllMovies() {
     // get all movies from the DB
