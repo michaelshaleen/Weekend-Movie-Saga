@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {useHistory, Link} from 'react-router-dom';
+const axios = require('axios');
 
 
 
@@ -17,9 +18,17 @@ function ThisMovie({movie}) {
       type: 'THIS_MOVIE',
       payload:  movie
     })
+    grabGenre();
     history.push('/details')
   }
   
+
+  const grabGenre = () => {
+    dispatch({
+      type: 'FETCH_GENRES',
+      payload: movie
+    })
+  }
  
 
   return(

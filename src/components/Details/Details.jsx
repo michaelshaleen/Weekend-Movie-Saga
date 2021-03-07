@@ -7,7 +7,10 @@ function Details() {
   const history = useHistory();
   //newMovie comes from state in newMovie reducer
   const movieDetails = useSelector(store => store.newMovie);
-  console.log(movieDetails, "LOOK HERE HOE");
+  const movieGenreDetails = useSelector(store => store.genres);
+
+  console.log(movieDetails, "MOVIE DETAILS");
+  console.log(movieGenreDetails[0], 'GENRES')
   
   
   return(
@@ -19,7 +22,11 @@ function Details() {
       {/* grabs values from object of movieDetails */}
         <p>{movieDetails.title}</p>
         <p>{movieDetails.description}</p>
-        <p>{movieDetails.poster}</p>
+
+        {/* <p>{movieGenreDetails.map((genre, index) => 
+        <p key={index}>{genre}</p> */}
+
+        
    </>
   )
 };

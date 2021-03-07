@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('SET_MOVIES', setMovies);
+    yield takeEvery('FETCH_GENRES', fetchGenres);
 }
 
 
@@ -29,8 +30,6 @@ function* setMovies(action) {
       console.log('ERROR SINGLE MOVIE');
   }    
 }
-
-
 
 //reducer called when 'THIS_MOVIE' is dispatched
 //returns a state, can be accessed with .newMovie
@@ -69,13 +68,23 @@ const movies = (state = [], action) => {
 }
 
 // Used to store the movie genres
-const genres = (state = [], action) => {
+
+function* fetchGenres() {
+  try {
+      const genres = yield axios.get('/api/genre/');
+      console.log('get all GENRES:', genres.data);
+      yield put({ type: 'SET_GENRES', payload: genres.data });
+  } catch {
+      console.log('get all error');
+  }      
+}
+const genres = (state = [], action) => {    
     switch (action.type) {
-        case 'SET_GENRES':
-            return action.payload;
+      case 'SET_GENRES':
+        return action.payload;
         default:
-            return state;
-    }
+          return state;
+        }
 }
 
 // Create one store that all components can use
