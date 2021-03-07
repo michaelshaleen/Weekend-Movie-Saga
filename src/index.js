@@ -22,9 +22,11 @@ function* rootSaga() {
 function* setMovies(action) {
   try {
       yield axios.post('/api/movie/:id', action.payload);
-      console.log('LOOKING FOR THIS ???', res.data);
-
-  } catch {
+      yield put({
+        type: 'FETCH_MOVIES'
+            })
+  } 
+  catch {
       console.log('ERROR SINGLE MOVIE');
   }
       
