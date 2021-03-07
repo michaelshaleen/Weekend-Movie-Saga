@@ -17,18 +17,17 @@ function ThisMovie({movie}) {
     console.log(movie,"MOVIE")
     dispatch({
       type: 'THIS_MOVIE',
-      payload:  movie
+      payload: movie
     })
     grabGenre();
-    history.push('/details')
   }
   
-
   const grabGenre = () => {
     dispatch({
       type: 'FETCH_GENRES',
       payload: movie.id
     })
+    history.push('/details')
   }
  
 
@@ -47,9 +46,3 @@ function ThisMovie({movie}) {
 }
 
 export default ThisMovie;
-{/* <div class="w3-card-4">
-  <img src="img_snowtops.jpg" alt="Alps">
-  <div class="w3-container w3-center">
-    <p>The Italian / Austrian Alps</p>
-  </div>
-</div> */}

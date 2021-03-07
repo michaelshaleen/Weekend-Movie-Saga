@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App.js';
@@ -69,9 +69,9 @@ const movies = (state = [], action) => {
 
 // Used to store the movie genres
 
-function* fetchGenres() {
+function* fetchGenres(action) {
   try {
-      const genres = yield axios.get('/api/genre/:id');
+      const genres = yield axios.get(`/api/genre/${action.payload}`);
       console.log('get all GENRES:', genres.data);
       yield put({ type: 'SET_GENRES', payload: genres.data });
   } catch {

@@ -23,12 +23,12 @@ function Details() {
 
         <p>{movieDetails.title}</p>
         <p>{movieDetails.description}</p>
-        <p>{movieGenreDetails}</p>
-
-        {/* <p>{movieGenreDetails.map((genre, index) => 
-        <p key={index}>{genre}</p> */}
-
-        
+           {movieGenreDetails.map(genre => {
+             return (
+               <p>{genre.name}</p>
+               )
+              }
+          )} 
    </>
   )
 };
